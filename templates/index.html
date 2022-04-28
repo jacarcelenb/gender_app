@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Clasificación de genero</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-outline-info" href="/">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 style="text-align: center;">Clasificación de genero</h1>
+        <br>
+        <br>
+        <br>
+
+        <form action="/test" method="POST">
+
+            <div class="m-0 row justify-content-center">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body" style="background-image:url(/static/fondo3.png);">
+
+
+
+                            <div class="form row">
+                                <div class="form-group col-md-4">
+                                    <label>Pelo Largo</label>
+                                    <input type="number" min="0" step="1" class="form-control" placeholder="pelo largo"
+                                        name="pelo">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Ancho Frente</label>
+                                    <input type="number" min="0" step="1"  class="form-control" placeholder="ancho frente"
+                                        name="anchofrente">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Altura Frente</label>
+                                    <input type="number" min="0" step="1"  class="form-control" placeholder="altura frente"
+                                        name="alturafrente">
+                                </div>
+                            </div>
+
+                            <div class="form row">
+                                <div class="form-group col-md-4">
+                                    <label> Nariz Ancha </label>
+                                    <input type="number" min="0" step="1"  class="form-control" placeholder="nariz ancha"
+                                        name="narizancha">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Nariz Alta</label>
+                                    <input type="number" min="0" step="1"  class="form-control" placeholder="nariz alta"
+                                        name="narizalta">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Labios delgados</label>
+                                    <input type="number" min="0" step="1"  class="form-control" placeholder="labios"
+                                        name="labios">
+                                </div>
+                            </div>
+
+                            <div class="form row">
+                                <div class="form-group col-md-4">
+                                    <label>Distancia</label>
+                                    <input type="number" min="0" step="1" class="form-control" placeholder="distancia"
+                                        name="distancia">
+                                </div>
+
+                            </div>
+
+                            <div style="display: block; text-align: center;">
+                                <button class="btn btn-info" id="predecir" type="submit"
+                                    style="width: 10em;">Predecir</button>
+                            </div>
+
+                           
+
+                        </div>
+                        
+                
+                    </div>
+                </div>
+                           
+                           
+                    <br>
+                  
+        </form>
+    
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <br>
+    <div style="text-align: center; height: 50% ; font-weight: bolder; font: size 100px; color: crimson;"
+        id="resultado">
+
+    </div>
+
+
+    </div>
+
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/62347e7da34c2456412bb0ba/1fuegs6oj';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
