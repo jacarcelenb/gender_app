@@ -1,4 +1,4 @@
-from keras.models import load_model
+from keras.models import model_from_json
 from matplotlib.pyplot import axis
 import tensorflow as tf
 import numpy as np
@@ -6,27 +6,22 @@ from sklearn import preprocessing
 from sklearn import decomposition
 import pandas as pd
 
-model_gender = load_model("model.h5")
+def predecirGenero(lista):
+    # cargamos los datos
+    datos_array = np.array(lista, "float32")
+    json_file = open('model.json', 'r')
+    loaded_model_json = json_file.read()
+    json_file.close()
+    loaded_model = model_from_json(loaded_model_json)
+    # cargar pesos al nuevo modelo
+    loaded_model.load_weights("model.h5")
+    opt = tf.keras.optimizers.Adam(learning_rate=0.01)
+    # Compilar modelo cargado y listo para usar usando los mismos parámetros.
+    loaded_model.compile(loss='binary_crossentropy', optimizer=opt, metrics=['binary_accuracy'])
 
-admissions = pd.read_csv('minmax.csv')
-datos = admissions.values
-datos = np.array(datos , "float32")
+    return int(loaded_model.predict(datos_array.reshape(1, 2)).round())
 
-def predecir(lista):
-    lista = np.array(lista , "float32")
-    min_max_scaler = preprocessing.MinMaxScaler(feature_range=(0,1))
-    datos= np.concatenate((datos,[lista]) , axis=0)
-    datos = min_max_scaler.fit_transform(datos)
-    pca = decomposition.PCA(n_components=2)
-    datos = pca.fit_transform(datos)
-    datos = np.array([datos[-1]])
-    prediction = model_gender.predict([datos]).argmax(axis= 1)
-    print("Prediccion ")
-    print(prediction)
-    return prediction
 
-lista = [1,11.8 ,6.1,1,0,1,1]
-predecir(lista)
     
 
 
