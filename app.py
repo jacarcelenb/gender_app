@@ -8,7 +8,7 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-
+@app.route("/test", methods=["POST"])
 def predecir():
     if request.method == "POST":
         pelo = request.form['pelo']
