@@ -6,6 +6,19 @@ from sklearn import preprocessing
 from sklearn import decomposition
 import pandas as pd
 
+
+def min_max_scaler(lista):
+  listado = []
+  listamin = [0 ,11.4,5.1,0,0,0,0]
+  listamax = [1,15.5,7.1,1,1,1,1]
+
+  valor_min_max = 0
+
+  for i in range(len(lista)):
+    valor_min_max = (lista[i] - listamin[i])/(listamax[i] - listamin[i])
+    listado.append(valor_min_max)
+  return listado
+
 def predecirGenero(lista):
     # cargamos los datos
     datos_array = np.array(lista, "float32")
