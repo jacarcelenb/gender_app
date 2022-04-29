@@ -1,10 +1,7 @@
 from keras.models import model_from_json
-from matplotlib.pyplot import axis
 import tensorflow as tf
 import numpy as np
-from sklearn import preprocessing
-from sklearn import decomposition
-import pandas as pd
+
 
 
 def min_max_scaler(lista):
