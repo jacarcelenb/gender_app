@@ -8,7 +8,6 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-
 @app.route("/test", methods=["POST"])
 def predecir():
     if request.method == "POST":
@@ -27,6 +26,7 @@ def predecir():
         prediccion = modelo.predecirGenero(entradas)
 
     return render_template("test.html", genero=prediccion)
+
 
 
 if __name__ == '__main__':
