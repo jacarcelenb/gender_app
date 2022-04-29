@@ -24,16 +24,16 @@
     </nav>
     <h1>Resultados</h1>
 
-    {% if cancer == 0 %}
-    <h3>El tipo de cáncer es Benigno</h3>
+    {% if genero == 0 %}
+    <h3>Su  género es  masculino</h3>
     <br>
-    <img src="/static/benigno.jpg" style="width: 15em; height: 15em;" alt="" srcset="">
+    <img src="/static/masculino.png" style="width: 15em; height: 15em;" alt="" srcset="">
     {% endif %}
 
-    {% if cancer == 1 %}
-    <h3>El tipo de cáncer es Maligno</h3>
+    {% if genero == 1 %}
+    <h3>Su  género es  femenino</h3>
     <br>
-    <img src="/static/maligno.jpg" style="width: 15em; height: 15em;" alt="" srcset="">
+    <img src="/static/femenino.png" style="width: 15em; height: 15em;" alt="" srcset="">
     {% endif %}
 
 
