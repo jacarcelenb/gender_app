@@ -5,25 +5,11 @@ import modelo
 app = Flask(__name__)
 
 
-@app.route("/" , methods=["GET","POST"])
+@app.route("/", methods=["GET"])
 def home():
-      if request.method == "POST":
-        pelo = request.form['pelo']
-        anchofrente = request.form['anchofrente']
-        alturafrente = request.form['alturafrente']
-        narizancha = request.form['narizancha']
-        narizalta = request.form['narizalta']
-        labios = request.form['labios']
-        distancia = request.form['distancia']
+        return render_template("index.html")
 
-        entradas = [float(pelo), float(anchofrente), float(alturafrente),
-                    float(narizancha), float(narizalta), float(labios),
-                    float(distancia)]
-
-        prediccion = modelo.predecirGenero(entradas)
-        return render_template("index.html", genero=prediccion)
-
-@app.route("/deteccion")
+@app.route("/",methods=["POST"])
 def predecir():
     if request.method == "POST":
         pelo = request.form['pelo']
@@ -40,7 +26,7 @@ def predecir():
 
         prediccion = modelo.predecirGenero(entradas)
 
-    return render_template("test.html", genero=prediccion)
+    return render_template("index.html", genero=prediccion)
 
 
 
