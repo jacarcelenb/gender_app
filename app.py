@@ -1,14 +1,29 @@
+from crypt import methods
 from flask import Flask, render_template, request
 import modelo
 
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/" , methods=["GET","POST"])
 def home():
-    return render_template("index.html")
+      if request.method == "POST":
+        pelo = request.form['pelo']
+        anchofrente = request.form['anchofrente']
+        alturafrente = request.form['alturafrente']
+        narizancha = request.form['narizancha']
+        narizalta = request.form['narizalta']
+        labios = request.form['labios']
+        distancia = request.form['distancia']
 
-@app.route("/deteccion", methods=["GET","POST"])
+        entradas = [float(pelo), float(anchofrente), float(alturafrente),
+                    float(narizancha), float(narizalta), float(labios),
+                    float(distancia)]
+
+        prediccion = modelo.predecirGenero(entradas)
+        return render_template("index.html", genero=prediccion)
+
+@app.route("/deteccion")
 def predecir():
     if request.method == "POST":
         pelo = request.form['pelo']
